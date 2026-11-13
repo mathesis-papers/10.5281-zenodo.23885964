@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 81478,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "56b0a4b828fbdc8ce42852041a899a988f7f063fcdb4f0f4e6b2476d9fe4359a"
+    },
+    "source": {
+      "bytes": 12194,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "d72a96ff874e970cc96ada12c1d20bd30a456dfa7105c8b31e1e65da9b790266"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We answer Kang–Jäger's Question 1.10 (arXiv:2609.01140v1) negatively, including its strictly ergodic and Toeplitz versions. We construct one aperiodic regular Toeplitz subshift over the binary alphabet such that, for every permutative block code of every length ell >= 2, the entire inverse image is conjugate over the base to the product with the identity on 2^(ell-1) points. Each lift therefore has exactly 2^(ell-1) clopen strictly ergodic components. The construction uses recognizable equal-length words with factorial repetition counts: these annihilate every finite permutation action, while the proportion of columns on which the two words differ is exactly 3^(-n).",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23885964",
+    "current_version": 2,
+    "doi": "10.5281/zenodo.23885965",
+    "lean_source": {
+      "revision": "fd1633144086085a16f35c8171e2f4b6186a6fbb",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/kang-jager-2026-universal-permutative-lift-refutation/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:23.722594337Z",
+    "record": "kang-jager-2026-universal-permutative-lift-refutation",
+    "repository_name": "6aec384bf903dfd2d5d82496",
+    "source": {
+      "url": "/api/v1/collected-papers/kang-jager-2026-universal-permutative-lift-refutation/files/source?version=2"
+    },
+    "title": "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:23.722594337Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "kang-jager-2026-universal-permutative-lift-refutation"
+  }
+}

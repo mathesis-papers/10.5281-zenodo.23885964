@@ -1,0 +1,15 @@
+{
+  "id": "kang-jager-2026-universal-permutative-lift-refutation",
+  "revision": 2,
+  "problem_ids": ["kang-jager-2026-universal-permutative-lift-refutation"],
+  "topic": "A negative answer to every universal existence branch of Kang–Jäger Question 1.10, including the regular Toeplitz strictly ergodic case",
+  "title": "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "We answer Kang–Jäger's Question 1.10 (arXiv:2609.01140v1) negatively, including its strictly ergodic and Toeplitz versions. We construct one aperiodic regular Toeplitz subshift over the binary alphabet such that, for every permutative block code of every length ell >= 2, the entire inverse image is conjugate over the base to the product with the identity on 2^(ell-1) points. Each lift therefore has exactly 2^(ell-1) clopen strictly ergodic components. The construction uses recognizable equal-length words with factorial repetition counts: these annihilate every finite permutation action, while the proportion of columns on which the two words differ is exactly 3^(-n).",
+  "summary": "One fixed binary regular Toeplitz strictly ergodic base has nonminimal complete inverse images for every bipermutative sliding block code of every length at least two; the exact component count is 2^(ell-1).",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.lean"
+}

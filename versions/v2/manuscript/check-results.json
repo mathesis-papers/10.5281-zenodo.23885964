@@ -1,0 +1,50 @@
+{
+  "all_binary_bipermutative_rules_by_length": {
+    "2": 2,
+    "3": 4,
+    "4": 16,
+    "5": 256
+  },
+  "arithmetic": "exact integers and rational numbers",
+  "direct_word_holonomy_checks": 3690,
+  "noncommuting_permutation_pairs": 474,
+  "ordered_pair_occurrence_controls": 16,
+  "parent_boundary_coordinate_controls": 6336,
+  "permutation_pairs_degrees_1_to_4": 617,
+  "prefix_transition_checks": 8488,
+  "scope": "Finite controls only. The all-length and all-level assertions are proved in note.tex.",
+  "status": "pass",
+  "trivialization_edge_checks": 746640,
+  "word_levels": [
+    {
+      "disagreements": 1,
+      "fraction": "1",
+      "height": 1,
+      "level": 0
+    },
+    {
+      "disagreements": 1,
+      "fraction": "1/3",
+      "height": 3,
+      "level": 1
+    },
+    {
+      "disagreements": 2,
+      "fraction": "1/9",
+      "height": 18,
+      "level": 2
+    },
+    {
+      "disagreements": 12,
+      "fraction": "1/27",
+      "height": 324,
+      "level": 3
+    },
+    {
+      "disagreements": 288,
+      "fraction": "1/81",
+      "height": 23328,
+      "level": 4
+    }
+  ]
+}

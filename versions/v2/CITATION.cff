@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-05"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/kang-jager-2026-universal-permutative-lift-refutation?version=2"
+doi: "10.5281/zenodo.23885965"
+license: "CC-BY-4.0"

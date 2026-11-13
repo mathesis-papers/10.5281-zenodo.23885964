@@ -1,0 +1,196 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage[colorlinks=true,allcolors=blue,breaklinks=true]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\N}{\mathbb N}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Per}{\operatorname{Per}}
+\newcommand{\id}{\operatorname{id}}
+\title{A negative answer to Kang--J\"ager's Question 1.10\protect\\ on permutative lifts}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{November 1, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We answer Kang--J\"ager's Question 1.10 \cite[Question 1.10]{KJ} negatively, including its strictly ergodic and Toeplitz versions.
+We construct one aperiodic regular Toeplitz subshift over the binary alphabet such that, for every permutative block code of every length $\ell\geq2$, the entire inverse image is conjugate over the base to the product with the identity on $2^{\ell-1}$ points.
+Each lift therefore has exactly $2^{\ell-1}$ clopen strictly ergodic components.
+The construction uses recognizable equal-length words with factorial repetition counts: these annihilate every finite permutation action, while the proportion of columns on which the two words differ is exactly $3^{-n}$.
+\end{abstract}
+\noindent\textit{License.} This note is licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+\section{The question and its quantifiers}
+Kang and J\"ager ask in \cite[Question 1.10]{KJ} whether a given minimal or strictly ergodic subshift admits a permutative lift of length at least two that is again minimal or strictly ergodic, with an optional Toeplitz hypothesis on the base. Their preceding sentence calls this a question left \emph{open}. Here a single strictly ergodic regular Toeplitz base gives a negative answer to every such universal existence assertion.
+
+We use the source's conventions. Put $A=\{0,1\}$ and let $(Sy)_i=y_{i+1}$ on $A^{\Z}$. A subshift is a nonempty closed shift-invariant set. It is minimal if every orbit is dense, and strictly ergodic if it is minimal and has a unique invariant Borel probability. A block map $h:A^\ell\to A$ is \emph{permutative} if it is bijective in each endpoint when the other letters are fixed; this is also called bipermutative. Its sliding block map is
+\[
+ (\eta_hx)_i=h(x_i,\ldots,x_{i+\ell-1}).
+\]
+The lift in the question is the whole set $\eta_h^{-1}(Y)$, not a selected minimal component.
+
+\begin{theorem}\label{thm:main}
+There is an aperiodic regular Toeplitz subshift $Y\subset A^{\Z}$, which is strictly ergodic, with the following property. For every $\ell\geq2$ and every permutative $h:A^\ell\to A$, there is a homeomorphism
+\[
+ \Theta_h:\eta_h^{-1}(Y)\longrightarrow Y\times A^{\ell-1}
+\]
+whose first coordinate is $\eta_h$ and which conjugates $S$ to $S\times\id$. In particular, every such entire lift is nonminimal.
+\end{theorem}
+
+The source already proves that for each fixed code there is a regular Toeplitz base with nonminimal lift \cite[Theorem 1.9(b), Proposition 6.12]{KJ}, and that each Toeplitz base has at least one code with nonminimal lift \cite[Theorem 6.11]{KJ}. Theorem~\ref{thm:main} places the existential choice of the base before both the length and the code. It is compatible with the source's positive results for specially chosen bases and fixed lengths.
+The finite skew-product description is due to the source \cite[Proposition 1.1, Theorem 1.3]{KJ}, in the framework of Hedlund \cite[Section 6]{Hedlund}. Cobounding maps as obstructions to minimality are established in \cite[Definition 7.3, Proposition 7.4, Theorem 7.5]{Berthe}; the contribution here is an explicit single base making all finite letter actions coboundaries simultaneously. For the surrounding Toeplitz theory see \cite{Downarowicz}. We give the needed dynamical arguments directly.
+
+\section{A recognizable factorial construction}
+Set $U_0=0$, $V_0=1$. For $n\geq0$, put $m_n=(n+1)!$ and define
+\begin{equation}\label{eq:words}
+ U_{n+1}=U_n^{2m_n}V_n^{m_n},\qquad
+ V_{n+1}=U_n^{m_n}V_n^{2m_n}.
+\end{equation}
+Their common length is $H_0=1$, $H_{n+1}=3m_nH_n$. Let $Y_n$ consist of all bi-infinite concatenations of $U_n,V_n$, allowing every phase modulo $H_n$, and put $Y=\bigcap_{n\geq0}Y_n$. Each $Y_n$ is a nonempty compact subshift, as a finite union of continuous images of $A^{\Z}$ under concatenation. Since $Y_{n+1}\subseteq Y_n$, compactness proves $Y\ne\varnothing$.
+
+\begin{lemma}\label{lem:tiling}
+Every point of $Y_n$ has a unique marked tiling by $U_n,V_n$: both the tile boundaries and the types are determined. The marked tiling depends continuously on the point. On $Y$, these tilings refine one another.
+\end{lemma}
+\begin{proof}
+The level-zero assertion is immediate. Inductively refine an $(n+1)$-tiling into $n$-tiles. In the resulting type sequence the parent words are $0^{2m_n}1^{m_n}$ and $0^{m_n}1^{2m_n}$. The transitions $10$ occur exactly at parent starts. Thus the unique lower tiling determines the parent boundaries, and the two distinct run lengths distinguish the parent types. This proves uniqueness by induction. In particular $U_1=001$, $V_1=011$, and the initial marker is the ordinary visible word $10$.
+
+For continuity, the space of marked tilings is compact: it records a phase in $\Z/H_n\Z$ and a bi-infinite sequence of types. The reading map to $Y_n$ is a continuous bijection by uniqueness, hence a homeomorphism. Refining a higher tiling gives the unique lower one, proving compatibility.
+\end{proof}
+
+Write $\theta_n(y)\in\Z/H_n\Z$ for the position of the origin inside its $n$-tile. Then $\theta_n$ is continuous and
+\begin{equation}\label{eq:phase}
+ \theta_n(Sy)=\theta_n(y)+1.
+\end{equation}
+If $S^py=y$ for a positive integer $p$, then $H_n\mid p$ for every $n$. Since $H_n\to\infty$, no point of $Y$ is periodic.
+
+\begin{lemma}\label{lem:minimal}
+The subshift $Y$ is minimal.
+\end{lemma}
+\begin{proof}
+For $n\geq1$, all four ordered pairs of $n$-tile types occur inside each $(n+2)$-tile. Indeed $00,01,11$ occur inside each $(n+1)$-tile because $m_n\geq2$. The pair $10$ occurs across a boundary between two $(n+1)$-tiles, and each $(n+2)$-tile contains such a boundary. Now take a word $w$ in the language of $Y$ and choose $n\geq1$ with $|w|\leq H_n$. An occurrence of $w$ is contained in two consecutive $n$-tiles, so $w$ occurs in every $(n+2)$-tile. Consequently its occurrences have bounded gaps in every point of $Y$. Every nonempty relative cylinder is therefore met by every orbit, which proves minimality.
+\end{proof}
+
+\section{Regularity and unique ergodicity}
+Let $D_n=\{0\leq j<H_n:U_n(j)\ne V_n(j)\}$. Comparing the three aligned thirds in \eqref{eq:words} gives
+\begin{equation}\label{eq:mismatch}
+ |D_0|=1,\qquad |D_{n+1}|=m_n|D_n|,\qquad
+ \frac{|D_n|}{H_n}=3^{-n}.
+\end{equation}
+The other columns have the same symbol in every $n$-tile.
+
+\begin{lemma}\label{lem:toeplitz}
+There is an aperiodic Toeplitz point $y_*\in Y$ generating $Y$, and its periodic skeleton densities tend to one along a period structure of essential periods.
+\end{lemma}
+\begin{proof}
+Let $K_n\subseteq Y_n$ be the compact nonempty set of points having an $n$-tile boundary at the origin. Refinement gives $K_{n+1}\subseteq K_n$, so choose $y_*\in\bigcap_n K_n$.
+Both $(n+1)$-words have common prefix $U_n^{m_n}$ and common suffix $V_n^{m_n}$. For any fixed $i\in\Z$, choose $n$ with $|i|<H_n$. If $i\geq0$, its column in an $(n+1)$-tile lies in the common prefix; if $i<0$, its column in the preceding tile lies in the common suffix. The symbol at $i$ is therefore periodic with period $H_{n+1}$. This proves the Toeplitz property for this aligned point. Its aperiodicity follows from \eqref{eq:phase}, and Lemma~\ref{lem:minimal} gives $\overline{\{S^ky_*:k\in\Z\}}=Y$.
+
+For a positive integer $p$, let $\Per(y_*,p)$ be the coordinates whose symbols are unchanged by every translate by $p$, and let $s_p$ be the colored skeleton equal to $y_*$ there and a hole elsewhere. At every residue outside $D_n$, all $n$-tiles agree. Hence
+\begin{equation}\label{eq:density}
+ \frac{|\Per(y_*,H_n)\cap[0,H_n)|}{H_n}\ \geq\ 1-3^{-n}.
+\end{equation}
+Here and below intervals in counting formulas contain integer coordinates.
+
+For completeness, these periods can be made essential in the convention of \cite[Section 6.1]{KJ}. Let $e_n$ be the least positive period of $s_{H_n}$, for $n\geq1$. Then $e_n\mid H_n$, and
+\[
+ \Per(y_*,e_n)=\Per(y_*,H_n),\qquad s_{e_n}=s_{H_n}.
+\]
+The forward inclusion follows from divisibility; the reverse follows by translating a nonhole symbol of $s_{H_n}$ by $e_n$. Thus $e_n$ is essential and has the same skeleton density.
+If $p\mid r$ and $q$ is a period of $s_r$, then $q$ is also a period of $s_p$: all coordinates $i+kp$ of a $p$-periodic column belong to the $r$-skeleton; its $q$-periodicity preserves their symbols, so $i+q$ is $p$-periodic with the same symbol. Applying the same argument with $-q$ also preserves the hole set. With $p=H_n$, $r=H_{n+1}$, this proves $e_n\mid e_{n+1}$.
+The $e_n$ are unbounded: otherwise they eventually equal some $e$, and coverage of every coordinate by the $H_n$-skeletons would make $y_*$ globally $e$-periodic. Delete repetitions from $(e_n)$ to obtain a strictly increasing divisibility sequence of essential periods covering every coordinate. Its densities tend to one by \eqref{eq:density}. This is regularity.
+\end{proof}
+
+\begin{lemma}\label{lem:unique}
+The subshift $Y$ has exactly one invariant Borel probability.
+\end{lemma}
+\begin{proof}
+Existence follows by taking a weak limit of empirical measures on an orbit; compactness gives a limit, and telescoping the averages of $f\circ S-f$ proves invariance for every continuous $f$.
+For uniqueness let $\mu,\nu$ be invariant probabilities. Equation~\eqref{eq:phase} implies that each gives every phase $j\in\Z/H_n\Z$ mass $1/H_n$.
+Let $C$ be a cylinder determined by coordinates $t,\ldots,t+r-1$. Call a phase $j$ bad if $(j+t+a)\bmod H_n\in D_n$ for some $0\leq a<r$. There are at most $r|D_n|$ bad phases. On every other phase, all these coordinates are determined independently of the tile types, including when the window crosses a boundary. Thus $C$ either contains the whole phase class or none of it. The common contribution of good phases cancels, while the contribution of bad phases lies between zero and their common total mass. Therefore
+\[
+ |\mu(C)-\nu(C)|\leq \frac{r|D_n|}{H_n}=r3^{-n}.
+\]
+Letting $n\to\infty$ shows equality on all cylinders. Cylinders generate the Borel sigma-algebra, so $\mu=\nu$.
+\end{proof}
+
+\section{Trivializing every finite letter action}
+Fix a nonempty finite set $Q$, let $d=|Q|$, and choose any two permutations $\pi_0,\pi_1\in\Sym(Q)$. For a word $w=a_0\cdots a_{r-1}$ write
+\[
+ P(w)=\pi_{a_{r-1}}\cdots\pi_{a_0},\qquad P(\varnothing)=1;
+ \quad P(uv)=P(v)P(u).
+\]
+Choose $n\geq\max\{1,d\}$. The order of every permutation of $d$ points divides $d!$, hence divides $n!$. Applying \eqref{eq:words} at level $n$ therefore gives
+\begin{equation}\label{eq:holonomy}
+ P(U_n)=P(V_n)=1.
+\end{equation}
+For example $P(U_n)=P(V_{n-1})^{n!}P(U_{n-1})^{2n!}=1$; no commutativity is used.
+
+For $y\in Y$, let $c(y)$ be the product $P$ of the prefix of its current $n$-tile strictly before the origin. This is continuous by Lemma~\ref{lem:tiling}. Moving the origin forward one letter gives
+\begin{equation}\label{eq:coboundary}
+ c(Sy)=\pi_{y_0}c(y).
+\end{equation}
+Inside a tile this is the product rule; at its last letter the left side resets to $1$ and the right side is its whole-tile product, also $1$ by \eqref{eq:holonomy}. Consequently
+\begin{equation}\label{eq:trivial}
+ F(y,q)=(y,c(y)^{-1}q)
+\end{equation}
+is a homeomorphism, with inverse $(y,q)\mapsto(y,c(y)q)$, conjugating
+$(y,q)\mapsto(Sy,\pi_{y_0}q)$ to $S\times\id$.
+
+To apply this to a permutative $h:A^\ell\to A$, take $Q=A^{\ell-1}$. Given $a\in A$ and a prefix $q=(q_0,\ldots,q_{\ell-2})$, right permutativity determines the unique $b$ with $h(q_0,\ldots,q_{\ell-2},b)=a$. Define
+\[
+ \pi_a(q)=(q_1,\ldots,q_{\ell-2},b).
+\]
+Left permutativity determines the unique inverse transition, so $\pi_a$ is a permutation. Given $y\in Y$ and an arbitrary prefix $q$, these transitions construct a unique preimage $x$ in both directions. Each finite window of $x$ depends on a finite window of $y$ and $q$, proving continuity. Thus
+\[
+ \gamma:\eta_h^{-1}(Y)\longrightarrow Y\times Q,
+ \qquad \gamma(x)=(\eta_hx,x_{[0,\ell-2]})
+\]
+is a homeomorphism conjugating $S$ to $(y,q)\mapsto(Sy,\pi_{y_0}q)$, as in \cite[Theorem 1.3]{KJ}. Composing $\gamma$ with \eqref{eq:trivial} proves Theorem~\ref{thm:main}.
+
+\begin{corollary}\label{cor:components}
+For every allowed $h$ of length $\ell$, its complete lift over $Y$ has exactly $2^{\ell-1}$ minimal components. Each is clopen and conjugate to $Y$, and therefore strictly ergodic. The invariant probabilities on the complete lift form a simplex with exactly $2^{\ell-1}$ ergodic vertices.
+\end{corollary}
+\begin{proof}
+Under $\Theta_h$, the components are precisely $Y\times\{q\}$ for $q\in A^{\ell-1}$. Every orbit closure equals one such slice by minimality of $Y$. An invariant probability on the product restricts on each slice to a scalar multiple of the unique invariant probability of $Y$; the scalars form a probability vector. Its extreme, equivalently ergodic, measures are exactly those supported on one slice.
+\end{proof}
+
+The same binary $Y$ is admissible under either choice of base hypothesis (minimal or strictly ergodic) and with or without the Toeplitz restriction. Since $2^{\ell-1}\geq2$, its entire lifts are never minimal and never uniquely ergodic. This covers all the alternatives in Question 1.10; the positive existence statements for other bases in \cite[Theorem 1.9(a),(d)]{KJ} are unchanged.
+
+\paragraph{Verification materials.}
+The accompanying source contains an exact-arithmetic checker for initial word levels, ordered-pair recurrence, noncommuting permutation products, and all binary permutative rules of lengths two through five. These finite controls are not premises of the all-level proof above. The formal declaration
+\href{https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Dynamics/Symbolic/PermutativeLifts/UniversalRefutation.lean}{\texttt{UniversalRefutation.result}}
+negates the universal minimal-existence claim, while
+\href{https://github.com/the-omega-institute/trureturing/blob/fd1633144086085a16f35c8171e2f4b6186a6fbb/D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.lean}{\texttt{BalancedRegularRefutation.result}}
+negates its regular Toeplitz strictly ergodic branch. The conjugacy, exact component count and invariant-probability simplex have written proofs above.
+
+\begin{thebibliography}{9}
+\bibitem{KJ} Zeyu Kang and Tobias J\"ager,
+\emph{On lifts of strictly ergodic subshifts by permutative sliding block codes},
+arXiv:2609.01140v1, September 1, 2026.
+\href{https://arxiv.org/html/2609.01140v1}{Version-specific text}.
+
+\bibitem{Berthe} Val\'erie Berth\'e, Herman Goulet-Ouellet,
+Carl-Fredrik Nyberg Brodda, Dominique Perrin, and Karl Petersen,
+\emph{Density of group languages in shift spaces},
+arXiv:2403.17892v3, June 10, 2026.
+\href{https://arxiv.org/html/2403.17892v3}{Version-specific text}.
+
+\bibitem{Hedlund} G. A. Hedlund,
+\emph{Endomorphisms and automorphisms of the shift dynamical system},
+Mathematical Systems Theory \textbf{3} (1969), 320--375.
+\href{https://doi.org/10.1007/BF01691062}{doi:10.1007/BF01691062}.
+
+\bibitem{Downarowicz} Tomasz Downarowicz,
+\emph{Survey of odometers and Toeplitz flows},
+in \emph{Algebraic and Topological Dynamics}, Contemporary Mathematics
+\textbf{385}, American Mathematical Society, 2005, 7--37.
+\href{https://doi.org/10.1090/conm/385/07188}{doi:10.1090/conm/385/07188}.
+\end{thebibliography}
+\end{document}
