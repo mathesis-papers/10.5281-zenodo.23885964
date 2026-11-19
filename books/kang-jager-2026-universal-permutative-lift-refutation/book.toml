@@ -1,0 +1,17 @@
+[book]
+version = "2"
+authors = ["Haobo Ma", "Wenlin Zhang"]
+license = "CC-BY-4.0"
+editions = ["zh", "en"]
+date = "2026-11-05"
+[book.title]
+zh = "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts"
+en = "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts"
+[outputs]
+html = true
+pdf = ["academic"]
+epub = true
+[mathesis]
+work = "kang-jager-2026-universal-permutative-lift-refutation"
+version = 2
+source_title = "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts"

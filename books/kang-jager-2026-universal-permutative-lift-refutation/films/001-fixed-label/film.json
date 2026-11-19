@@ -1,0 +1,27 @@
+{
+  "duration": "3:25",
+  "id": "001-fixed-label",
+  "lean": [],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "kang-jager-2026-universal-permutative-lift-refutation_001_cover.jpg",
+    "narrated_720p": "kang-jager-2026-universal-permutative-lift-refutation_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-16",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic symbolic dynamics",
+  "subject": "https://doi.org/10.5281/zenodo.23885965",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "One binary base defeats every bipermutative lift: recognizable blocks, factorial cancellation, and a fixed memory label.",
+  "summary_zh": "可识别积木、阶乘消去与固定记忆标签：同一个二进制底空间如何阻止所有双端可置换提升。",
+  "title": "The label that never changes",
+  "title_zh": "永不改变的标签"
+}

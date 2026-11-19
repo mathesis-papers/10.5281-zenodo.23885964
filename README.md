@@ -29,3 +29,43 @@ Haobo Ma, Wenlin Zhang (2026). A negative answer to Kang–Jäger's Question 1.1
 ## Contributions
 
 Original authors are listed above. Formalization contributors and attribution are retained in `formalization/nodes.json`; repository pull requests do not confer verification or credit. Submit formalization attempts through the Mathesis attempt path described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+<!-- Mathesis generated repository guide; refresh with paper.py front. -->
+
+## Reading and materials
+
+[Paper site](https://papers.trureturing.org/10.5281-zenodo.23885964/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+
+[中文阅读](https://papers.trureturing.org/10.5281-zenodo.23885964/kang-jager-2026-universal-permutative-lift-refutation/zh/) · [Read in English](https://papers.trureturing.org/10.5281-zenodo.23885964/kang-jager-2026-universal-permutative-lift-refutation/en/)
+
+[Slides](https://papers.trureturing.org/10.5281-zenodo.23885964/kang-jager-2026-universal-permutative-lift-refutation/slides/) ([sources](books/kang-jager-2026-universal-permutative-lift-refutation/slides/)) · [Videos](https://papers.trureturing.org/10.5281-zenodo.23885964/kang-jager-2026-universal-permutative-lift-refutation/films/) ([sources](books/kang-jager-2026-universal-permutative-lift-refutation/films/))
+
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/10.5281-zenodo.23885964/mathesis-materials.json).
+
+## Book and formalization
+
+Catalog formalization status above is separate from the statement comparisons below. A nearby declaration does not verify the complete written result.
+
+| Book result | Comparison with formal base | Compared declaration |
+|---|---|---|
+| `thm-main` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.splitting_conjugacy` |
+| `lem-tiling` | variant | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedSubshift.balancedReadTiling_injective` |
+| `lem-minimal` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense` |
+| `lem-regular` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator` |
+| `lem-unique` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic` |
+| `cor-components` | variant | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card` |
+| `thm-orbit-count` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card` |
+| `thm-refutation` | same | `D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.result` |
+
+Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/review.json).
+
+## Repository map
+
+| Zone | Location |
+|---|---|
+| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
+| Content | `books/kang-jager-2026-universal-permutative-lift-refutation/`: Chinese/English text, figures, visualizations, videos, slides, assets |
+| Machinery | Upstream and layer managed paths; update with `tbook template update` |
+| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
+
+See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.

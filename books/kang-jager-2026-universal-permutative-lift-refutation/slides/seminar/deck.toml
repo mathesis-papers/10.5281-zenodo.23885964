@@ -1,0 +1,10 @@
+kind = "academic"
+editions = ["zh", "en"]
+aspect = "4:3"
+short_author = "H. Ma, W. Zhang"
+short_title = "Permutative lifts"
+navigation_symbols = false
+
+[title]
+zh = "一套底空间，所有提升都分裂"
+en = "One base, every lift splits"

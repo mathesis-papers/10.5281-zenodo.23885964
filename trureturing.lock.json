@@ -1,0 +1,65 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.BalancedLift.orbit_closure_family_card",
+      "kind": "theorem",
+      "statement_id": "sha256:fcb909986a4c562f3e81ebc2a6160ff973ad10b0f687039e0f633566508d55cc",
+      "line": 141,
+      "signature": "theorem orbit_closure_family_card {k : ℕ} {h : (Fin (k + 2) → Bool) → Bool} (bh : Bipermutative h) : Nat.card (Set.range (fun x : LiftPoint h balancedSubshift => closure (AddAction.orbit ℤ x))) = 2 ^ (k + 1)"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.full_lift_not_minimal": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.BalancedLift.full_lift_not_minimal",
+      "kind": "theorem",
+      "statement_id": "sha256:9e05dd20cdaae67fc4c76273c1c59411e4bd915a3274eb1010723c3aa8d179d8",
+      "line": 62,
+      "signature": "theorem full_lift_not_minimal {k : ℕ} {h : (Fin (k + 2) → Bool) → Bool} (bh : Bipermutative h) : ¬ AddAction.IsMinimal ℤ (LiftPoint h balancedSubshift)"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.splitting_conjugacy": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.BalancedLift.splitting_conjugacy",
+      "kind": "theorem",
+      "statement_id": "sha256:9e05dd20cdaae67fc4c76273c1c59411e4bd915a3274eb1010723c3aa8d179d8",
+      "line": 33,
+      "signature": "theorem splitting_conjugacy {k : ℕ} {h : (Fin (k + 2) → Bool) → Bool} (bh : Bipermutative h) (x : LiftPoint h balancedSubshift) : splitting bh (liftShift balancedSubshift x) = (shiftBalanced 1 (splitting bh x).1, (splitting bh x).2)"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.Balanced.balanced_orbit_dense",
+      "kind": "theorem",
+      "statement_id": "sha256:df7eb48815e987894c42bdac234d425e8b2675c535718453ab24511052293139",
+      "line": 136,
+      "signature": "theorem balanced_orbit_dense (y : BalancedPoint) : DenseRange (fun g : ℤ => shiftBalanced g y)"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.result": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.BalancedRegularRefutation.result",
+      "kind": "theorem",
+      "statement_id": "sha256:5f982434ed0c0cf574b8050fd6698ffc39e532298900340f5571bb9f224c3d88",
+      "line": 48,
+      "signature": "theorem result : ¬ claim"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.Balanced.exists_balanced_regular_toeplitz_generator",
+      "kind": "theorem",
+      "statement_id": "sha256:f39ea8168048cd731b971b456398cbd318b6646e24f4c1b2ad83d2bfdf194a3e",
+      "line": 102,
+      "signature": "theorem exists_balanced_regular_toeplitz_generator : ∃ y : ℤ → Bool, y ∈ balancedSubshift.carrier ∧ HasPeriodicCoordinates y ∧ (∀ p : ℕ, 0 < p → shift (p : ℤ) y ≠ y) ∧ closure (Set.range (fun g : ℤ => shift g y)) = balancedSubshift.carrier ∧ ∃ P : PeriodStructure y, Tendsto P.skeletonDensity atTop (𝓝 1)"
+    },
+    "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic": {
+      "module": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic",
+      "name": "D5.S1.Dynamics.Symbolic.PermutativeLifts.Balanced.balanced_unique_ergodic",
+      "kind": "theorem",
+      "statement_id": "sha256:e9b10741f028de91d7fb37571cf592cf36f76497d9f27afbe5b9b372890c1f39",
+      "line": 108,
+      "signature": "theorem balanced_unique_ergodic : ∃! μ : Measure BalancedPoint, IsProbabilityMeasure μ ∧ MeasurePreserving (shiftBalanced 1) μ μ"
+    }
+  }
+}

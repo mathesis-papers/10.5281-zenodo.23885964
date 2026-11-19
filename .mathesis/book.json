@@ -1,0 +1,93 @@
+{
+  "book": "kang-jager-2026-universal-permutative-lift-refutation",
+  "pending_claims": [],
+  "results": {
+    "thm-main": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s1",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator",
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense",
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic",
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.splitting_conjugacy",
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.full_lift_not_minimal"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.splitting_conjugacy",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "lem-tiling": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s2",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedSubshift.balancedReadTiling_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Continuous marked decoder on every balanced tiling space",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/243"
+      }
+    },
+    "lem-minimal": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s3",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "lem-regular": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s4",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "lem-unique": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s5",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "cor-components": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s6",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Invariant probability simplex of every split balanced lift",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/244"
+      }
+    },
+    "thm-orbit-count": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s6",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "thm-refutation": {
+      "claim": "collected:kang-jager-2026-universal-permutative-lift-refutation:2:s1",
+      "gids": [
+        "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts",
+    "zh": "A negative answer to Kang–Jäger's Question 1.10 on permutative lifts"
+  },
+  "version": 2,
+  "work": "kang-jager-2026-universal-permutative-lift-refutation"
+}

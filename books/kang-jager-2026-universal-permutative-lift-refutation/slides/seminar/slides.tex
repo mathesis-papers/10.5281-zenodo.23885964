@@ -1,0 +1,263 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{一套底空间，所有提升都分裂}
+\subtitle{A negative answer to Kang--Jäger's Question 1.10}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore\and\inst{2}National University of Singapore, Singapore}
+\date{Version 2, 2026}
+\begin{document}
+% Manuscript: Title and abstract
+\begin{frame}
+\titlepage
+\note{问题问能否找到一种局部规则，使完整提升仍然极小。核心结论是一个固定底空间同时阻止所有长度、所有双端可置换规则。姓名沿用论文记录。}
+\end{frame}
+
+% Manuscript: Sections 1–4
+\begin{frame}{路线}
+\tableofcontents
+\note{先解释局部规则和量词，再构造积木，最后给出固定标签与证据。}
+\end{frame}
+
+\section{问题}
+\subsection{局部规则}
+
+% Manuscript: Section 1, definitions; Section 4, finite-state representation
+\begin{frame}{两个输入，不等于两个分支}
+相邻异或规则：
+\[
+y_i=x_i+x_{i+1}\pmod 2,\qquad x_{i+1}=x_i+y_i\pmod 2.
+\]
+\begin{itemize}
+\item 给定输出与 $x_0$，向两侧唯一重建。
+\item 两个起始位给出两个输入。
+\item 平移会改变观察点的位；还需要一个真正不变的标签。
+\end{itemize}
+\note{用最简单的二位规则解释有限记忆。不要把每个输出有两个原像直接当作动力学分裂。}
+\end{frame}
+
+% Manuscript: Section 1; Kang–Jäger Question 1.10 and Theorem 1.9
+\begin{frame}{量词的次序决定问题}
+Kang--Jäger 的 Question 1.10：给定极小或严格遍历底空间，是否存在某个长度至少为二的可置换规则，使完整逆像仍有该性质？
+\medskip
+\begin{itemize}
+\item 已知：固定规则后，可以选择一个失败的底空间。
+\item 本文：先选择一个底空间，再任取长度和规则。
+\item 完整逆像必须一起考虑，不能只挑一个分支。
+\end{itemize}
+\note{双端可置换性指固定其余位时，对任一端点都为双射。长度范围为 $\ell\geq2$。Kang--Jäger 的 Theorem 1.9(b),(c) 与本文的量词次序不同。}
+\end{frame}
+
+% Manuscript: Theorem 1
+\begin{frame}{同一个底空间}
+\begin{bookresult}{thm-main}
+存在非周期正则 Toeplitz 且严格遍历的 $Y$，使每个 $\ell\geq2$ 和每个双端可置换 $h$ 都满足
+\[
+\Theta_h:\eta_h^{-1}(Y)\simeq Y\times\{0,1\}^{\ell-1},
+\]
+\[
+\operatorname{pr}_1\Theta_h=\eta_h,\qquad
+\Theta_h S=(S\times\mathrm{id})\Theta_h.
+\]
+\end{bookresult}
+\note{极小指每条轨道稠密；严格遍历还要求唯一不变概率。Toeplitz 指每个坐标都有自己的周期。精确结果包括同胚、第一坐标及共轭，不只是不极小性。}
+\end{frame}
+
+\section{构造}
+\subsection{可识别积木}
+
+% Manuscript: Section 2, equation (1)
+\begin{frame}{阶乘积木}
+
+\[
+U_0=0,\quad V_0=1,\quad m_n=(n+1)!\quad(n\geq0).
+\]
+\[
+U_{n+1}=U_n^{2m_n}V_n^{m_n},
+\]
+\[
+V_{n+1}=U_n^{m_n}V_n^{2m_n}.
+\]
+\[
+(U_1,V_1)=(001,011),\quad H_{n+1}=3m_nH_n.
+\]
+所有层都能铺出的序列构成 $Y=\bigcap_{n\geq0}Y_n$；嵌套紧集保证非空。
+\note{幂是重复拼接，不是数字乘方。第 $n$ 层的两块等长。第二层长度为 $18$。非空性来自无限层紧致性，不来自有限检查。}
+\end{frame}
+
+% Manuscript: Lemma 2; Section 2, phase identity
+\begin{frame}{边界可以从符号中读出}
+
+\begin{bookresult}{lem-tiling}
+每层带标记铺法唯一、连续；在 $Y$ 上逐层细化相容。
+\end{bookresult}
+\[
+0^{2m_n}1^{m_n}\quad\hbox{or}\quad0^{m_n}1^{2m_n}.
+\]
+类型序列中的 $10$ 恰好标出父块起点；游程长度区分父块类型。
+\[
+\theta_n(Sy)=\theta_n(y)+1\pmod {H_n}.
+\]
+$S^py=y$ 将迫使每个 $H_n\mid p$，所以没有正周期。
+\note{连续性的完整论证是紧铺法空间到 Hausdorff 符号空间的连续双射为同胚。已有源码给出所有层的单射性和交集上的连续译码；整层逆连续性的剩余表述保留书面证明。}
+\end{frame}
+
+% Manuscript: Lemma 3
+\begin{frame}{每个局部图案都会回来}
+
+\begin{bookresult}{lem-minimal}
+$Y$ 极小。
+\end{bookresult}
+\begin{itemize}
+\item 对 $n\geq1$，每个第 $n+2$ 层词含全部相邻类型对。
+\item 长度至多 $H_n$ 的窗口至多跨两个第 $n$ 层词。
+\item 因此每个允许图案在每个足够大的积木中出现，间隔有界。
+\end{itemize}
+\note{$m_n\geq2$ 保证 $00,01,11$ 在父块内部出现；$10$ 在父块之间出现。选择 $n\geq1$ 避免第一层游程长度的端点问题。}
+\end{frame}
+
+\subsection{正则与遍历}
+
+% Manuscript: Lemma 4; Section 3
+\begin{frame}{差异列每层缩小三倍}
+
+\[
+D_n=\{j:U_n(j)\ne V_n(j)\},\qquad \frac{|D_n|}{H_n}=3^{-n}.
+\]
+\begin{bookresult}{lem-regular}
+同一个 $Y$ 有非周期正则 Toeplitz 生成元。
+\end{bookresult}
+每个固定坐标最终进入共有前缀或后缀，获得自己的周期。周期骨架密度至少为 $1-3^{-n}$。
+\medskip
+从骨架的最小周期提取本质周期结构。
+\note{不能把每个位置周期误说成整个序列周期。最小骨架周期逐项整除、无界，删去重复项后得到本质周期结构；完整推导见书内证明。}
+\end{frame}
+
+% Manuscript: Lemma 5
+\begin{frame}{一个误差界决定全部统计}
+
+\begin{bookresult}{lem-unique}
+$Y$ 恰有一个不变 Borel 概率。
+\end{bookresult}
+\[
+\mu(\theta_n=j)=\nu(\theta_n=j)=1/H_n.
+\]
+宽度 $r$ 的柱集 $C$ 最多遇到 $r|D_n|$ 个坏相位：
+\[
+|\mu(C)-\nu(C)|\leq r3^{-n}\longrightarrow0.
+\]
+固定窗口，再令 $n\to\infty$；存在性来自轨道经验概率的弱极限。
+\note{好相位的整个纤维都属于或都不属于柱集，所以两测度贡献相同；坏相位贡献的差最多为其总质量，不需多乘一个二。}
+\end{frame}
+
+\section{分裂}
+\subsection{固定标签}
+
+% Manuscript: Section 4, holonomy equation
+\begin{frame}{整块作用变为恒等}
+任意有限状态集 $Q$，$d=|Q|$，字母排列 $\pi_0,\pi_1$。
+\[
+P(a_0\cdots a_{r-1})=\pi_{a_{r-1}}\cdots\pi_{a_0}.
+\]
+取 $n\geq\max\{1,d\}$。每个排列的阶整除 $d!\mid n!$，所以
+\[
+P(U_n)=P(V_{n-1})^{n!}P(U_{n-1})^{2n!}=1,
+\]
+\[
+P(V_n)=1.
+\]
+两个因子分别被消去，不要求排列交换。
+\note{这里阶乘消去的是整个下层词的排列。$n$ 可以随有限集合改变，但底空间 $Y$ 始终相同。}
+\end{frame}
+
+% Manuscript: Section 4, coboundary and trivialization equations
+\begin{frame}{换一个标签，运动就分离}
+$c(y)$ 是从当前积木起点到原点之前的累计排列。
+\[
+c(Sy)=\pi_{y_0}c(y),\qquad F(y,q)=(y,c(y)^{-1}q).
+\]
+\[
+F(Sy,\pi_{y_0}q)=(Sy,c(y)^{-1}q).
+\]
+\begin{itemize}
+\item 积木内部：同一个左因子相消。
+\item 积木边界：整块作用为恒等，重置相容。
+\item 可识别性使标签变化连续；$F^{-1}(y,q)=(y,c(y)q)$。
+\end{itemize}
+\note{端点处的检查不可省去，否则只得到积木内部的等式。新标签 $c(y)^{-1}q$ 固定，底坐标仍平移。}
+\end{frame}
+
+% Manuscript: Section 4; Kang–Jäger Theorem 1.3
+\begin{frame}{从局部规则到有限排列}
+
+\[
+Q=\{0,1\}^{\ell-1},\qquad |Q|=2^{\ell-1}.
+\]
+给定输出 $a$ 与前缀 $q$，唯一解出末位 $b$：
+\[
+h(q_0,\ldots,q_{\ell-2},b)=a,
+\]
+\[
+\pi_a(q)=(q_1,\ldots,q_{\ell-2},b).
+\]
+右端条件给出前进，左端条件给出逆转。与 $F$ 复合即得主定理的 $\Theta_h$。
+\note{当 $\ell=2$ 时新前缀只有 $b$。双向重建对每个有限窗口仅需有限数据，因此得到整个逆像上的同胚。此表示来自 Kang--Jäger Theorem 1.3。}
+\end{frame}
+
+% Manuscript: Corollary 6
+\begin{frame}{分支与统计的精确答案}
+
+\begin{bookresult}{cor-components}
+完整提升恰有 $2^{\ell-1}$ 个开闭严格遍历分支；不变概率单纯形恰有同样多的遍历顶点。
+\end{bookresult}
+\[
+\rho=\sum_{q\in Q}t_q\mu_q,\qquad t_q\geq0,\quad\sum_qt_q=1.
+\]
+正权重时归一化限制测度；零权重时限制为零。多个正权重给出中间质量的不变切片。
+\note{拓扑分支与计数已有形式证明。此整项结果的书面证明还包含概率传递与遍历顶点分类；相应共享请求只要求这些剩余测度条款。}
+\end{frame}
+
+\section{意义}
+
+% Manuscript: Section 1; final paragraph of Section 4
+\begin{frame}{问题得到否定答案}
+
+\begin{bookresult}{thm-refutation}
+并非每个严格遍历正则 Toeplitz 二进制底空间，都存在极小的双端可置换完整提升。
+\end{bookresult}
+\begin{itemize}
+\item 本文的同一个 $Y$ 同时覆盖所有长度和规则。
+\item 每个分支严格遍历，但完整提升不极小且不唯一遍历。
+\item 其他底空间上的正面结果依然成立。
+\end{itemize}
+\note{这是否定普遍存在命题的单列形式结果，不把它扩大成显式共轭的同一个声明。本文不分类所有可有极小提升的底空间。}
+\end{frame}
+
+\appendix
+
+% Manuscript: Bibliography; verification materials
+\begin{frame}{证据与文献}
+完整阅读与证明：Haobo Ma、Wenlin Zhang，第 2 版。
+\medskip
+\href{https://doi.org/10.5281/zenodo.23885965}{doi:10.5281/zenodo.23885965}
+\begin{itemize}
+\item Kang--Jäger，arXiv:2609.01140v1，Question 1.10、Theorems 1.3 与 1.9。
+\item Berthé 等，arXiv:2403.17892v3，余边界与极小性。
+\item Hedlund (1969)；Downarowicz (2005)：局部规则与 Toeplitz 背景。
+\item 有限层逆连续性与概率单纯形保留完整书面证明。
+\end{itemize}
+\note{完整参考文献与聚焦贡献链接见书末。不能用初始层的有限检查替代无限层证明。}
+\end{frame}
+
+% Manuscript: Corollary 6, topological clause
+\begin{frame}{轨道闭包的计数}
+
+\begin{bookresult}{thm-orbit-count}
+任意允许的长度 $\ell$ 的规则，在固定 $Y$ 上恰有 $2^{\ell-1}$ 个不同轨道闭包。
+\end{bookresult}
+这是分支结论的拓扑计数部分。每个轨道闭包是一个固定标签切片。
+\note{形式源码使用 $\ell=k+2$，前缀集合为 $\operatorname{Fin}(k+1)\to\operatorname{Bool}$。这覆盖全部 $\ell\geq2$，该定理不声称概率测度分类。}
+\end{frame}
+
+% Manuscript: Source evidence ledger
+\FormalVerification
+\end{document}

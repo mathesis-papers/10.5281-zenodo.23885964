@@ -1,0 +1,135 @@
+{
+  "voice": "af_heart",
+  "speed": 0.94,
+  "say": {
+    "Jäger": "Yay ger",
+    "Haobo": "How bow",
+    "Wenlin": "Wen lin"
+  },
+  "music": {
+    "bpm": 80,
+    "progression": "a-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "TWO STARTING BITS",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "The output tells us whether adjacent input bits differ. Choose the first input bit, and the rest can be reconstructed in both directions.",
+          "输出告诉我们相邻输入位是否不同。选定一个起始位，就能向两侧重建其余输入。"
+        ],
+        [
+          "There are two starting choices. But two inputs above each output do not yet mean two separate dynamical worlds.",
+          "起始位有两种选择。但每个输出有两个输入，还不等于动力学分成两个世界。"
+        ],
+        [
+          "Kang and Jäger asked whether some endpoint rule can keep the whole inverse image minimal: every trajectory can approximate every allowed row. This paper builds one base defeating all such rules of length at least two.",
+          "Kang 与 Jäger 问，能否用某个双端可置换规则使完整逆像仍然极小，即每条轨道都能逼近每条允许序列。本文的同一底空间挡住所有长度至少为二的这类规则。"
+        ]
+      ]
+    },
+    {
+      "id": "blocks",
+      "name": "RECOGNIZABLE BLOCKS",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "Start with zero and one. The next two blocks are zero zero one, and zero one one. The transition from one to zero marks a boundary.",
+          "从零和一开始，下一层的两块是零零一与零一一。由一到零的转换标出边界。"
+        ],
+        [
+          "At each level, build a run of the first block followed by a run of the second. The repetition counts use factorials.",
+          "每层先重复第一种积木，再重复第二种；重复次数使用阶乘。"
+        ],
+        [
+          "The same boundary marker works in the lower block types. Every level has a unique tiling. A global period would have to be divisible by every growing block length, which is impossible.",
+          "同一个边界标记也适用于下层积木类型，每层铺法都唯一。整体周期必须被所有不断增长的积木长度整除，这是不可能的。"
+        ]
+      ]
+    },
+    {
+      "id": "columns",
+      "name": "FEWER DISAGREEMENTS",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "Align the two blocks. Their disagreement fraction is one third at level one, one ninth at level two, and one third to the level number in general.",
+          "把两块上下对齐。第一层有三分之一的列不同，第二层为九分之一，一般为三的层数次方的倒数。"
+        ],
+        [
+          "Every fixed position in a suitably aligned row eventually gains its own period. Periodic positions fill a density tending to one, while the whole row stays nonperiodic.",
+          "在恰当对齐的序列中，每个固定位置最终都有自己的周期。周期位置的密度趋于一，但整个序列仍不周期。"
+        ],
+        [
+          "Invariant probabilities give equal weight to every tile position. A fixed window can distinguish two probability laws only near disagreement columns. The error tends to zero, so the invariant law is unique.",
+          "不变概率给每个积木位置相同权重。固定窗口只有靠近差异列时才能区分两种概率规律。误差趋于零，故不变规律唯一。"
+        ]
+      ]
+    },
+    {
+      "id": "factorial",
+      "name": "FACTORIAL CANCELLATION",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "A rule of length ell remembers ell minus one input bits. Each output bit permutes this finite set of memory states.",
+          "长度为 ell 的规则记住 ell 减一个输入位。每个输出位都排列这个有限记忆集合。"
+        ],
+        [
+          "Any permutation of d states has order dividing d factorial. At a sufficiently high level, each repeated lower block therefore acts as the identity.",
+          "d 个状态上的任意排列，其阶整除 d 的阶乘。因此在足够高层，每个重复的下层积木都作用为恒等。"
+        ],
+        [
+          "Both whole tiles act trivially. The two permutations need not commute: each repeated factor becomes the identity separately.",
+          "两种完整积木的作用都是恒等。两个排列无需交换：每个重复因子分别归于恒等。"
+        ]
+      ]
+    },
+    {
+      "id": "label",
+      "name": "RELABEL THE MEMORY",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "Let c record the accumulated permutation since the current tile began. Replace the memory state q by c inverse applied to q.",
+          "用 c 记录从当前积木起点开始的累计排列，把记忆状态 q 换成 c 的逆作用于 q。"
+        ],
+        [
+          "Reading one more bit changes both the accumulated permutation and the state by the same left factor. The new label stays fixed.",
+          "多读一位时，累计排列与状态都左乘同一个因子，新标签保持不变。"
+        ],
+        [
+          "At a boundary, the accumulation resets. This is consistent because the whole tile acts as the identity. Recognizable boundaries make the change continuous and reversible.",
+          "跨边界时累计作用重置。整块作用为恒等，保证重置相容；边界可识别使换标签连续且可逆。"
+        ]
+      ]
+    },
+    {
+      "id": "copies",
+      "name": "SEPARATE COPIES",
+      "lead": 1,
+      "tail": 1,
+      "lines": [
+        [
+          "The result is the base times a fixed set of labels. For length ell, there are exactly two to the power ell minus one copies. A shift moves along a copy but never changes its label.",
+          "结果是底空间与固定标签集的乘积。长度为 ell 时恰有二的 ell 减一次方个副本；平移只在同一副本内移动，标签永远不变。"
+        ],
+        [
+          "Each copy has dense trajectories and one invariant probability law. The entire lift is not minimal. Its invariant probabilities are weighted mixtures of the copies unique probabilities, and zero weights are allowed.",
+          "每个副本的轨道稠密，不变概率规律唯一。完整提升不极小；其不变概率是各副本唯一概率的带权混合，权重允许为零。"
+        ],
+        [
+          "This is an all length construction by Haobo Ma and Wenlin Zhang. The complete proofs and precise formal sources accompany the reading. Positive results for other bases remain valid.",
+          "这是 Haobo Ma 与 Wenlin Zhang 对所有长度同时成立的构造。完整证明与精确形式化源码见正文；其他底空间上的正面结果依然成立。"
+        ]
+      ]
+    }
+  ]
+}

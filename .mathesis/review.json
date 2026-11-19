@@ -1,0 +1,52 @@
+{
+  "results": {
+    "thm-main": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftSplitting.splitting_conjugacy",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact jointly covered statement, not identified with a negation: BalancedWords defines exactly the source recurrence (false=U, true=V); balancedSubshift is its intersection. The cited regular-generator, dense-orbit and unique-probability theorems provide the same explicit witness. splitting_conjugacy quantifies k>=0 and every Bipermutative h of length k+2; splitting is a Homeomorph to BalancedPoint times Fin(k+1)->Bool. Its composition definition preserves the code as first coordinate: fullLiftHomeomorph uses code/sourcePrefix and trivializingHomeomorph only relabels the second coordinate. full_lift_not_minimal supplies the final clause. ell=k+2 translates all ell>=2 including ell=2. No claim that BalancedRegularRefutation.result alone states the explicit theorem."
+    },
+    "lem-tiling": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedSubshift.balancedReadTiling_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Partial coverage: balancedReadTiling_injective is uniqueness for every marked level tiling, and continuous_readTiling plus compactness prove the written inverse-continuity argument. continuous_decode and refine_decode explicitly cover continuity/refinement on the intersection Y only. The source lemma asserts inverse continuity on every entire Y_n. The request asks only for that remaining finite-level topological clause, reusing existing injection and compactness."
+    },
+    "lem-minimal": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedMinimal.balanced_orbit_dense",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact: balanced_orbit_dense for every BalancedPoint is literal minimality of the same intersection subshift under signed integer shift. Existence is supplied by balanced_subshift_nonempty; the source word-pair recurrence is inspected."
+    },
+    "lem-regular": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularity.exists_balanced_regular_toeplitz_generator",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact: exists_balanced_regular_toeplitz_generator gives membership, periodicity of every signed coordinate, no positive global period, orbit closure equal to the same balancedSubshift, and an essential PeriodStructure with actual skeleton densities tending to 1. No inference from density alone or a nonessential height list."
+    },
+    "lem-unique": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedUniqueErgodic.balanced_unique_ergodic",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact: balanced_unique_ergodic is exists-unique of actual Borel Measure BalancedPoint with IsProbabilityMeasure and MeasurePreserving shiftBalanced 1. The proof includes existence and equality on signed finite windows, then cylinder measure uniqueness; no assumed invariant-measure profile."
+    },
+    "cor-components": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Partial: clopen fibres, component homeomorphisms/conjugacy, component minimality, orbit-closure equality and exact count are already frozen in BalancedLiftSplitting and BalancedLiftComponents. balanced_unique_ergodic is on the base. No theorem in inspected modules states invariant-probability transport/classification on the entire lift or its ergodic-vertex simplex. Request only these measure clauses, including zero weights; do not duplicate splitting or count."
+    },
+    "thm-orbit-count": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedLiftComponents.orbit_closure_family_card",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact narrower expository statement from s6: orbit_closure_family_card counts the range of actual integer orbit closures, 2^(k+1), for every length k+2 bipermutative binary rule. It does not assert probability-simplex coverage."
+    },
+    "thm-refutation": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S1/Dynamics/Symbolic/PermutativeLifts/BalancedRegularRefutation.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact narrower consequence from s1: result is not claim. Inspected claim quantifies nonempty binary subshifts with dense signed orbits, an actual unique invariant probability and an actual aperiodic regular Toeplitz generator/essential period structure; conclusion is existence of k>=0 and a bipermutative length k+2 rule with all entire-lift integer orbits dense. It is distinct from explicit conjugacy and component count."
+    }
+  }
+}
