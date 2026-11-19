@@ -23,8 +23,10 @@ The note’s finite checks of early word levels and binary rules of lengths two 
 
 Coordinate mathematical scope on the relevant shared request. Prepare a focused branch in your own fork and submit a PR directly to [upstream trureturing dev](https://github.com/the-omega-institute/trureturing/blob/dev/docs/CONTRIBUTING.md), following its current contribution and admission rules. The original paper's authorship and the formal proof contribution are separate credits.
 
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
+<section hidden="hidden">
 
 ```{=typst}
 #pagebreak()
 ```
+
+</section>

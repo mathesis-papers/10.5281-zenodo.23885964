@@ -23,8 +23,10 @@
 
 请在对应共享请求中协调数学范围，在自己的 fork 中准备聚焦分支，并依照[上游 trureturing dev 的贡献规则](https://github.com/the-omega-institute/trureturing/blob/dev/docs/CONTRIBUTING.md)直接提交 PR。论文原作者的数学贡献与形式证明贡献分别署名。
 
-<style>pre:has(> code[class*="typst"]) { display: none; }</style>
+<section hidden="hidden">
 
 ```{=typst}
 #pagebreak()
 ```
+
+</section>
